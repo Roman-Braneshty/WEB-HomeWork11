@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Organizer</title>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon"/>
+</head>
+<body>
+<main class="container">
+    <article>
+        <h3>Welcome {{nick}}</h3>
+        <nav
+                style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px"
+        >
+            <ul>
+                <li><a href="add_info" role="button">Add contact</a></li>
+                <li><a href="note" role="button">Add note</a></li>
+                <li><a href="tag" role="button">Add tag</a></li>
+                <li><a href="logout" role="button">Log out</a></li>
+            </ul>
+        </nav>
+        <div>
+            <h3>Контакти:</h3>
+            {% for contact in contacts%}
+            <ul>
+                <li>
+                    <a href="/page/{{contact.id}}" role="button" class="outline"
+                    >{{contact.first_name}} {{contact.last_name}}</a
+                    >
+                    <a href="/delete_contact/{{contact.id}}" role="button" class="contrast"
+                    >Delete contact</a
+                    >
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+        <div>
+            <h3>Нотатки:</h3>
+            {% for note in contact_notes%}
+            <ul>
+                <li>
+                    {%if not note.done%}
+                    <a href="/note_detail/{{note.id}}" role="button" class="outline"
+                    >{{note.name}}</a
+                    >
+                    <a href="/done/{{note.id}}" role="button">Mark Done</a>
+                    <a href="/delete/{{note.id}}" role="button" class="contrast"
+                    >Delete note</a
+                    >
+                    {% else %}
+
+                    <a href="/note_detail/{{note.id}}" role="button" class="secondary"
+                    ><s>{{note.name}}</s></a
+                    >
+                    {% endif %}
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+    </article>
+</main>
+</body>
+</html>

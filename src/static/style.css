@@ -1,0 +1,115 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F3F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #333333;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 80px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.manage-buttons{
+    position: absolute;
+    top: 35px;
+    right: 180px;
+    margin: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-around;
+}
+
+.top-button-add,
+.top-button-edit,
+.top-button-exit{
+    padding: 14px 20px;
+    margin: 5px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: white;
+   color: black;
+   border: 2px solid #E9EC13;
+}
+
+.top-button-add:hover,
+.top-button-edit:hover,
+.top-button-exit:hover{
+  background-color: #1341EC;
+  color: white;
+}
+
+.contact-form{
+    width: 50%;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-img {
+    width: 250px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.address,
+.birthday,
+.phones,
+.emails{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.notes{
+    width: 50%;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name,
+.last-name,
+.note-name,
+.note-description,
+.note-tags{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+        padding: 10px;
+}
+
+.button-edit,
+.button-delete{
+    width: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+   color: black;
+   border: 2px solid #E9EC13;
+}
+
+.button-edit:hover,
+.button-delete:hover{
+  background-color: #1341EC;
+  color: white;
+}
+.buttons-remote{
+    margin: 10px;
+    padding: 2px;
+}

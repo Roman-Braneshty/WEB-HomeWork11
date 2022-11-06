@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+    <title>Personal assistant</title>
+</head>
+<body>
+<div class="wrapper">
+    <section class="manage-buttons">
+        <a class="top-button-add" href="/delete_info/{{contact_id}}">Видалити інформацію</a>
+        <!--<a class="top-button-add" href="#">Додати нотатки</a> -->
+        <a class="top-button-edit" href="/edit_info/{{contact_id}}">Редагувати інформацію</a>
+        <a class="top-button-exit" href="/start">Назад</a>
+    </section>
+    <section class="notes">
+        <img src="my-photo.jpg" alt="user-foto" class="user-img">
+        <div class="name">
+            <text>Им'я:</text>
+            <ul></ul>
+            <text>{{first_name}}</text>
+        </div>
+        <div class="last-name">
+            <text>Прізвище:</text>
+            <ul></ul>
+            <text>{{last_name}}</text>
+        </div>
+        <div class="birthday">
+            <text>День народження:</text>
+            <ul></ul>
+            <text>{{birthday}}</text>
+        </div>
+    </section>
+    <section class="contact-form">
+        <div class="address">
+            <text>Адресс:</text>
+            <ul style="list-style-type:disc">
+                {% for address in addresses %}
+                <li>{{address}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="phones">
+            <text>Телефон(и):</text>
+            <ul style="list-style-type:disc">
+                {% for phone in phones %}
+                <li>{{phone}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="emails">
+            <text>Email:</text>
+            <ul style="list-style-type:disc">
+                {% for email in emails %}
+                <li>{{email}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
