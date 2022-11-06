@@ -19,9 +19,3 @@ def delete_phone(contact_id, phone_id):
     db.session.query(models.Phone).filter(
         and_(models.Phone.contact_id == contact_id, models.Phone.id == phone_id)).delete()
     db.session.commit()
-
-
-if __name__ == '__main__':
-    contact_id = 2
-    phone = '38061'
-    print(upload_phone_for_user(contact_id, phone))

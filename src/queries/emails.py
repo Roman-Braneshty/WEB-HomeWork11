@@ -19,4 +19,3 @@ def delete_email(contact_id, email_id):
     db.session.query(models.Email).filter(
         and_(models.Email.contact_id == contact_id, models.Email.id == email_id)).delete()
     db.session.commit()
-

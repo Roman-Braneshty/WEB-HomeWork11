@@ -58,12 +58,3 @@ def delete_contact(user_id, contact_id):
     db.session.query(models.Contact).filter(
         and_(models.Contact.user_id == user_id, models.Contact.id == contact_id)).delete()
     db.session.commit()
-
-
-if __name__ == '__main__':
-    user_id = 1
-    contact_id = 2
-    first_name = 'Roman'
-    last_name = 'Bran'
-    birthday = '24.02.2022'
-    print(delete_contact(1, 2))

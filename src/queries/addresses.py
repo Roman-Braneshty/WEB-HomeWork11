@@ -19,8 +19,3 @@ def delete_address(contact_id, address_id):
     db.session.query(models.Address).filter(
         and_(models.Address.contact_id == contact_id, models.Address.id == address_id)).delete()
     db.session.commit()
-
-
-if __name__ == '__main__':
-    contact_id = 1
-    print(get_contact_address(contact_id)[0].phone)
